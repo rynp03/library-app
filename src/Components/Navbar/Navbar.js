@@ -7,6 +7,7 @@ import { HiOutlineMenuAlt3 } from "react-icons/hi";
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const handleNavbar = () => setToggleMenu(!toggleMenu);
+  const closeNav = () => setToggleMenu(false);
 
   return (
     <nav className="navbar" id="navbar">
@@ -14,9 +15,7 @@ const Navbar = () => {
         <div className="brand-and-toggler flex flex-sb">
           <Link to="/" className="navbar-brand flex">
             <img src={logo} alt="brand-logo" />
-            <span className="text-uppercase fw-7 fs-24 ls-1 ">
-              BookSpot
-            </span>
+            <span className="text-uppercase fw-7 fs-24 ls-1 ">BookSpot</span>
           </Link>
           <button
             type="button"
@@ -41,6 +40,7 @@ const Navbar = () => {
               <Link
                 to="/book"
                 className="nav-link text-uppercase text-white fs-22 fw-6 ls-1"
+                onClick={closeNav}
               >
                 Home
               </Link>
@@ -49,6 +49,7 @@ const Navbar = () => {
               <Link
                 to="/about"
                 className="nav-link text-uppercase text-white fs-22 fw-6 ls-1"
+                onClick={closeNav}
               >
                 About
               </Link>
